@@ -1,0 +1,47 @@
+{
+  "__version__": "1.0.4",
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "SnakeHead"
+      },
+      {
+        "index": 2,
+        "name": "Food"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 0,
+      "1": 4,
+      "2": 2
+    }
+  },
+  "general": {
+    "designResolution": {
+      "width": 3000,
+      "height": 2000,
+      "fitHeight": false,
+      "fitWidth": true
+    }
+  },
+  "layer": [
+    {
+      "name": "UI",
+      "value": 1
+    },
+    {
+      "name": "BACKGROUNG",
+      "value": 2
+    },
+    {
+      "name": "SNAKE",
+      "value": 4
+    },
+    {
+      "name": "FOOD",
+      "value": 8
+    }
+  ],
+  "custom_joint_texture_layouts": []
+}
