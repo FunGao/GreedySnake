@@ -8,7 +8,7 @@ import {
     Vec3,
     view 
 } from 'cc'
-import { SnakeHead } from './SnakeHead'
+import { GameX } from './GameX'
 
 const { ccclass, property } = _decorator
 
@@ -31,26 +31,26 @@ export class Rocker extends Component {
         let distance = Math.hypot(this.InnerButton.position.x, this.InnerButton.position.y)
         let edge = this.nodeSize / this.circleBorder
         if (distance > edge) {
-            this.InnerButton.setPosition(this.InnerButton.position.normalize().multiply3f(edge, edge, edge))
+            this.InnerButton.setPosition(this.InnerButton.position.normalize().multiplyScalar(edge))
         }
     }
 
     setTouchActive(active: boolean) {
-        if (active) {
-            this.node.on(Input.EventType.TOUCH_START, this.onTouchStart, this)
-            this.node.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this)
-            this.node.on(Input.EventType.TOUCH_END, this.onTouchEnd, this)
-            this.node.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
-        } else {
-            this.node.off(Input.EventType.TOUCH_START, this.onTouchStart, this)
-            this.node.off(Input.EventType.TOUCH_MOVE, this.onTouchMove, this)
-            this.node.off(Input.EventType.TOUCH_END, this.onTouchEnd, this)
-            this.node.off(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
-        }
+        // if (active) {
+        //     // this.node.on(Input.EventType.TOUCH_START, this.onTouchStart, this)
+        //     this.node.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this)
+        //     this.node.on(Input.EventType.TOUCH_END, this.onTouchEnd, this)
+        //     this.node.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
+        // } else {
+        //     // this.node.off(Input.EventType.TOUCH_START, this.onTouchStart, this)
+        //     this.node.off(Input.EventType.TOUCH_MOVE, this.onTouchMove, this)
+        //     this.node.off(Input.EventType.TOUCH_END, this.onTouchEnd, this)
+        //     this.node.off(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
+        // }
     }
 
     onDestroy() {
-        this.node.off(Input.EventType.TOUCH_START, this.onTouchStart, this)
+        // this.node.off(Input.EventType.TOUCH_START, this.onTouchStart, this)
         this.node.off(Input.EventType.TOUCH_MOVE, this.onTouchMove, this)
         this.node.off(Input.EventType.TOUCH_END, this.onTouchEnd, this)
         this.node.off(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
@@ -68,7 +68,7 @@ export class Rocker extends Component {
         ))
 
         this.direction = this.InnerButton.position.clone().normalize()
-        SnakeHead.direction = this.direction
+        GameX.SnakeDirection = this.direction
     }
 
     onTouchMove(event: EventTouch) {
@@ -89,16 +89,14 @@ export class Rocker extends Component {
         }
 
         this.direction = this.InnerButton.position.clone().normalize()
-        SnakeHead.direction = this.direction
+        GameX.SnakeDirection = this.direction
     }
 
     onTouchEnd() {
         this.InnerButton.setPosition(new Vec3(0, 0, 0))
-        SnakeHead.direction = null
     }
 
     onTouchCancel() {
         this.InnerButton.setPosition(new Vec3(0, 0, 0))
-        SnakeHead.direction = null
     }
 }

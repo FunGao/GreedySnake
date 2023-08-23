@@ -9,18 +9,48 @@
       {
         "index": 2,
         "name": "Food"
+      },
+      {
+        "index": 3,
+        "name": "Body"
+      },
+      {
+        "index": 4,
+        "name": "AISnakeHead"
+      },
+      {
+        "index": 5,
+        "name": "AIBody"
+      },
+      {
+        "index": 6,
+        "name": "Corpse"
+      },
+      {
+        "index": 7,
+        "name": "Border"
+      },
+      {
+        "index": 8,
+        "name": "NoCollideBody"
       }
     ],
     "collisionMatrix": {
       "0": 0,
-      "1": 4,
-      "2": 2
+      "1": 252,
+      "2": 18,
+      "3": 18,
+      "4": 334,
+      "5": 2,
+      "6": 18,
+      "7": 2,
+      "8": 16
     }
   },
   "general": {
     "designResolution": {
-      "width": 3000,
-      "height": 2000,
+      "width": 6000,
+      "height": 4000,
       "fitHeight": false,
       "fitWidth": true
     }
@@ -41,6 +71,10 @@
     {
       "name": "FOOD",
       "value": 8
+    },
+    {
+      "name": "SNAKEAI",
+      "value": 16
     }
   ],
   "custom_joint_texture_layouts": []

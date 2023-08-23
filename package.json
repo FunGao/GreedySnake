@@ -3,5 +3,8 @@
   "uuid": "401f0285-767e-4151-9ad2-4168d487ed03",
   "creator": {
     "version": "3.7.2"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
   }
 }

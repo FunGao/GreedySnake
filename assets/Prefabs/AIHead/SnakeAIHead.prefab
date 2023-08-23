@@ -1,0 +1,292 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "SnakeAIHead",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "persistent": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SnakeAIHead",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "_parent": null,
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 4
+      },
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 10
+      }
+    ],
+    "_prefab": {
+      "__id__": 12
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -3000,
+      "y": -3000,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_mobility": 0,
+    "_layer": 16,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.UITransform",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 3
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 30,
+      "height": 38
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "48pbow85RP7qpN20pvZKFG"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 5
+    },
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_spriteFrame": {
+      "__uuid__": "e48da5f2-74ae-4074-93f5-470b52ffa5cd@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "b6gzDbkLtFb6J3dtc4YQiI"
+  },
+  {
+    "__type__": "cc.CircleCollider2D",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 7
+    },
+    "tag": 1,
+    "_group": 16,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0.2,
+    "_restitution": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_radius": 18,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "1dPuCvkgVKL6NlcYZNjXWD"
+  },
+  {
+    "__type__": "cc.RigidBody2D",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 9
+    },
+    "enabledContactListener": true,
+    "bullet": false,
+    "awakeOnLoad": true,
+    "_group": 16,
+    "_type": 1,
+    "_allowSleep": true,
+    "_gravityScale": 0,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_angularVelocity": 0,
+    "_fixedRotation": false,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "c6DD9henFJQKu5jEEQQVjN"
+  },
+  {
+    "__type__": "7458f8DwJdL+KI0py+RqfZs",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 11
+    },
+    "AIBodyPrefab": {
+      "__uuid__": "44b16b1b-b603-4d36-9018-b01fcef046a6",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab1": {
+      "__uuid__": "94698584-0a5f-418d-9382-a7ac7cfb2264",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab2": {
+      "__uuid__": "51cc721d-047e-4630-bf15-5787d757c8d9",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab3": {
+      "__uuid__": "6de73aa3-5c99-4880-86c2-ff2953a83993",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab4": {
+      "__uuid__": "97170935-0a8a-4758-85e7-e5f5eb519124",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab5": {
+      "__uuid__": "7916dcb7-c54a-4a51-afda-a11656e8f75f",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab6": {
+      "__uuid__": "2abdf1c0-f0bf-4a16-ab4f-487dce2e8f7b",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab7": {
+      "__uuid__": "cf3d0e07-fd3c-41d5-9876-55d8a16bcdc9",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab8": {
+      "__uuid__": "0d2e72c0-db0e-4af1-87ef-376378e6510b",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab9": {
+      "__uuid__": "245c20ef-4dee-42ca-9bdf-5268052581f6",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab10": {
+      "__uuid__": "40f3b2e6-e1bc-4b60-8538-9f61c79a6481",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab11": {
+      "__uuid__": "cb32d6c5-3f8f-49d2-a3b1-f3c83ca3082e",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab12": {
+      "__uuid__": "8dbb7bf1-e61d-4561-9cba-c9107c502f50",
+      "__expectedType__": "cc.Prefab"
+    },
+    "AIBodyPrefab13": {
+      "__uuid__": "1d4bda8e-f0a5-48d4-8dcc-9e309ac2db4f",
+      "__expectedType__": "cc.Prefab"
+    },
+    "CorpsePrefab": {
+      "__uuid__": "d05f6634-3538-46f2-b615-fb74ca215f86",
+      "__expectedType__": "cc.Prefab"
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "9dOeS7jspD3q8w85EKaZ4F"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "9duhDD1/BJPYJQaZT8htP8",
+    "instance": null,
+    "targetOverrides": null
+  }
+]
