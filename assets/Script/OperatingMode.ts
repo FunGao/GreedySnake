@@ -73,7 +73,8 @@ export class OperatingMode extends Component {
         if (this.CurClick === 0) {
             GameX.SwitchMode = false
             GameX.CurrentMoveMode = 0
-            this.TouchScreenControl.setTouchActive(true)
+            this.TouchScreenControl.setTouchActive(false)
+            this.RockerControl.setTouchActive(true)
             this.PauseMenu.active = false
             this.MenuBackGroung.active = false
             this.GameRocker.active = (GameX.CurrentMoveMode === 0)
@@ -86,6 +87,7 @@ export class OperatingMode extends Component {
             return
         }
         if (this.CurClick === 1) {
+            this.RockerControl.setTouchActive(false)
             this.TouchScreenControl.setTouchActive(false)
             GameX.CurrentMoveMode = 1
             this.GameRocker.active = (GameX.CurrentMoveMode === 0)
@@ -97,6 +99,7 @@ export class OperatingMode extends Component {
         if (this.CurClick === 2) {
             GameX.CurrentMoveMode = 2
             GameX.SwitchMode = false
+            this.RockerControl.setTouchActive(false)
             this.TouchScreenControl.setTouchActive(true)
             this.PauseMenu.active = false
             this.MenuBackGroung.active = false

@@ -17,6 +17,7 @@ const { ccclass, property } = _decorator
 enum GameState {
     GAME_INIT,
     GAME_START,
+    GAME_RESTART,
     GAME_PAUSE,
     GAME_CONTINUE,
     GAME_END,
@@ -220,6 +221,9 @@ export class GameManager extends Component {
             case GameState.GAME_START:
                 this.startGame()
                 break
+            case GameState.GAME_RESTART:
+                this.reStartGame()
+                break
             case GameState.GAME_PAUSE:
                 this.pauseGame()
                 break
@@ -237,7 +241,7 @@ export class GameManager extends Component {
     openMoveMode() {
         switch (GameX.CurrentMoveMode) {
             case 0:
-                this.TouchScreenControl.setTouchActive(true)
+                this.RockerControl.setTouchActive(true)
                 break
             case 1:
                 this.GyroscopeControl.openGyroscope()
@@ -253,7 +257,7 @@ export class GameManager extends Component {
     closeMoveMode() {
         switch (GameX.CurrentMoveMode) {
             case 0:
-                this.TouchScreenControl.setTouchActive(false)
+                this.RockerControl.setTouchActive(false)
                 break
             case 1:
                 this.GyroscopeControl.closeGyroscope()
@@ -302,6 +306,26 @@ export class GameManager extends Component {
             this.ConfirmMenu.active = false
             this.WinMenu.active = false
         }
+    }
+
+    reStartGame() {
+        this.BackGroundControl.reset()
+        this.SneakControl.reborn()
+        this.SnakeAIControl.recreateAISnakes()
+        this.FoodControl.recreateFoods()
+        this.openMoveMode()
+        this.StartMenu.active = false
+        this.EndMenu.active = false
+        this.MenuBackGroung.active = false
+        GameX.SnakeAIMove = true
+        GameX.StartTime = Date.now()
+        GameX.PauseTime = 0
+        GameX.AllPauseTime = 0
+        GameX.GameTime = 0
+        GameX.Score = 0
+        GameX.DeathNumber = 0
+        GameX.SnakeLength = 3
+
     }
 
     pauseGame() {
@@ -361,6 +385,10 @@ export class GameManager extends Component {
 
     onStartButtonClick() {
         if (!this.maskFlag) this.setGameState(GameState.GAME_START)
+    }
+
+    onReStartButtonClick() {
+        if (!this.maskFlag) this.setGameState(GameState.GAME_RESTART)
     }
 
     onPauseButtonClick() {
