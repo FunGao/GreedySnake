@@ -116,15 +116,15 @@ export const getScreenFPS = (() => {
     return (frame = 60) => {
         const start = Date.now()
         let count = 0
-        return new Promise(resolve => {
-            (function log() {
+        return new Promise((resolve) => {
+            (function func() {
                 nextFrame(() => {
                     if (++count >= frame) {
                         const diff = Date.now() - start
                         const fps = (count / diff) * 1000
                         return resolve(fps)
                     }
-                    log()
+                    func()
                 })
             })()
         })

@@ -142,13 +142,10 @@ export class BackGround extends Component {
                         GameX.SnakeSpeed--
                         GameX.SnakeAISpeed--
                     }
-                    if(this.accelerate === 5 && GameX.no_revive_pass_num < 20) {
+                    if(this.accelerate === 5) {
                         GameX.SnakeSpeed--
                     }
-                    if(this.accelerate === 4 && GameX.no_revive_pass_num >= 20) {
-                        GameX.SnakeSpeed--
-                    }
-                    if(this.accelerate === 6 && GameX.no_revive_pass_num >= 20) {
+                    if(this.accelerate === 7 && GameX.no_revive_pass_num >= 20) {
                         GameX.SnakeSpeed--
                     }
                     this.accelerate++

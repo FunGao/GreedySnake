@@ -1,4 +1,4 @@
-import { _decorator, Button, Component, director, Input, Label, Node, profiler, Vec3 } from 'cc'
+import { _decorator, Button, Component, director, Game, Input, Label, Node, profiler, Vec3 } from 'cc'
 import { SnakeManager } from './SnakeManager'
 import { SnakeAIManager } from './SnakeAIManager'
 import { FoodManager } from './FoodManager'
@@ -133,6 +133,10 @@ export class GameManager extends Component {
 
     start() {
         profiler.hideStats()
+
+        const game = new Game()
+        game.frameRate = 30
+
         this.initGame()
         this.setGameState(GameState.GAME_INIT)
     }

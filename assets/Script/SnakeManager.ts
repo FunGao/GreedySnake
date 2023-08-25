@@ -211,7 +211,7 @@ export class SnakeManager extends Component {
     initValue() {
         GameX.SnakeSpeed = GameX.SnakeSpeed || 5
         this.snakeArray = [this.Snake]
-        this.sectionSpace = this.Snake.getComponent(UITransform).contentSize.width / 1.6
+        this.sectionSpace = this.Snake.getComponent(UITransform).contentSize.width / 2
         this.speed = this.sectionSpace / GameX.SnakeSpeed
         this.moveArray = []
         this.invincible = true

@@ -319,8 +319,8 @@ function logSend(logInfo: any) {
     }
 
     // 打点地址
-    // release:http://47.100.233.173:8989/
-    // master:http://35.166.237.230:8989/
+    // release: http://47.100.233.173:8989/
+    // master: http://35.166.237.230:8989/
     // online: https://ss-store-api.funplus.com/
     const logurl = 'https://ss-store-api.funplus.com/api/appoint_event_bilog'
     fetch(logurl, {
