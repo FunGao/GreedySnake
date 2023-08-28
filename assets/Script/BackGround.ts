@@ -137,19 +137,15 @@ export class BackGround extends Component {
                     this.Back.active = false
                     this.BackFlag = true
                     this.createBorders()
-                    // if (this.accelerate % 3 === 0) {
-                    if (this.accelerate === 0 || this.accelerate === 2) {
+                    if (this.accelerate === 0 ||
+                        this.accelerate === 3 ||
+                        this.accelerate === 6) {
                         GameX.SnakeSpeed--
                         GameX.SnakeAISpeed--
                     }
-                    if(this.accelerate === 5 && GameX.no_revive_pass_num < 20) {
-                        GameX.SnakeSpeed--
-                    }
-                    if(this.accelerate === 4 && GameX.no_revive_pass_num >= 20) {
-                        GameX.SnakeSpeed--
-                    }
-                    if(this.accelerate === 6 && GameX.no_revive_pass_num >= 20) {
-                        GameX.SnakeSpeed--
+                    if (this.accelerate === 1 || this.accelerate === 4 || this.accelerate === 7) {
+                        if (GameX.no_revive_pass_num >= 20) GameX.SnakeSpeed--
+                        else GameX.SnakeSpeed -= 2
                     }
                     this.accelerate++
 

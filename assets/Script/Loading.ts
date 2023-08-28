@@ -134,17 +134,19 @@ export class Loading extends Component {
         window.removeEventListener('orientationchange', this.listenerFun)
         this.SreenTip.active = false
         if (GameX.CanPlay) {
-            GameX.SnakeSpeed = 5
+            GameX.FrameStep = 3
+            GameX.SnakeSpeed = 15
             GameX.SnakeAISpeed = 5
             if (GameX.no_used_revive_pass) {
-                if (GameX.no_revive_pass_num < 20) GameX.ShrinkRate = 8
-                else {
-                    GameX.ShrinkRate = 5
+                if (GameX.no_revive_pass_num < 20) {
+                    GameX.ShrinkRate = 10
+                } else {
+                    GameX.FrameStep = 5
+                    GameX.ShrinkRate = 6
                 }
             } else {
                 GameX.ShrinkRate = 15
             }
-            console.log()
             this.Mask.active = true
             GameX.FirstPlay = false
             director.loadScene('game')

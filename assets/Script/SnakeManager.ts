@@ -156,7 +156,7 @@ export class SnakeManager extends Component {
                     (this.Snake.position.y < GameX.BackGroundHeight / -2 /* && Math.abs(Vec3.angle(GameX.SnakeDirection, new Vec3(0, -1, 0))) < Math.PI / 2 */)
                 )) {
                     if (GameX.SnakeDirection) {
-                        this.direction = this.direction.clone().lerp(GameX.SnakeDirection, 1.2 / GameX.SnakeSpeed).normalize()
+                        this.direction = this.direction.clone().lerp(GameX.SnakeDirection, 1.2 * GameX.FrameStep / GameX.SnakeSpeed).normalize()
                         this.speed = this.sectionSpace / GameX.SnakeSpeed
                         this.rotateHead(this.direction)
                         this.moveSnake()
@@ -322,16 +322,20 @@ export class SnakeManager extends Component {
 
     moveSnake() {
         let distance = this.direction.clone().multiplyScalar(this.speed)
-        this.Snake.setPosition(this.Snake.position.clone().add(distance))
+        for (let i = 0; i < GameX.FrameStep; i++) {
+            this.Snake.setPosition(this.Snake.position.clone().add(distance))
+            this.moveArray.unshift(this.Snake.position.clone())
+        }
+
         this.BorderTop.setPosition(new Vec3(this.Snake.position.x, this.Snake.position.y + 340, 0))
         this.BorderBottom.setPosition(new Vec3(this.Snake.position.x, this.Snake.position.y - 340, 0))
         this.BorderLeft.setPosition(new Vec3(this.Snake.position.x - (340 * GameX.GameUIScale), this.Snake.position.y, 0))
         this.BorderRight.setPosition(new Vec3(this.Snake.position.x + (340 * GameX.GameUIScale), this.Snake.position.y, 0))
-        this.moveArray.unshift(this.Snake.position.clone())
+
         for (let i = 1; i < this.snakeArray.length; i++) {
-            this.snakeArray[i].setPosition(this.moveArray[GameX.SnakeSpeed * i])
+            this.snakeArray[i].setPosition(this.moveArray[GameX.SnakeSpeed * i - GameX.FrameStep + 1])
         }
-        this.moveArray.splice(-1, 1)
+        this.moveArray.splice(-1, GameX.FrameStep)
     }
 
     moveCamera() {

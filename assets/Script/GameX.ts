@@ -57,6 +57,7 @@ export class GameX {
     public static GameUIScale: number = 0
 
     /* 速度控制 */
+    public static FrameStep: number = 0
     public static SnakeSpeed: number = 0
     public static SnakeAISpeed: number = 0
     public static SpeedBase: number = 8
