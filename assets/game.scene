@@ -216,7 +216,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 2124.087591240876,
+    "_orthoHeight": 2000,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -503,7 +503,7 @@
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
-    "_visibility": 30,
+    "_visibility": 62,
     "_targetTexture": null,
     "_cameraType": -1,
     "_trackingType": 0,
@@ -24193,7 +24193,7 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 2,
+    "_layer": 32,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -24299,7 +24299,7 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 2,
+    "_layer": 32,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -24405,7 +24405,7 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 2,
+    "_layer": 32,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -24511,7 +24511,7 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 2,
+    "_layer": 32,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,

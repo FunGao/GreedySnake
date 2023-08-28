@@ -75,6 +75,10 @@
     {
       "name": "SNAKEAI",
       "value": 16
+    },
+    {
+      "name": "BORDER",
+      "value": 32
     }
   ],
   "custom_joint_texture_layouts": []
