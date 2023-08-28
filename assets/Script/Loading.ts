@@ -136,13 +136,17 @@ export class Loading extends Component {
         if (GameX.CanPlay) {
             GameX.FrameStep = 3
             GameX.SnakeSpeed = 15
-            GameX.SnakeAISpeed = 5
-            if (GameX.no_used_revive_pass) {
-                if (GameX.no_revive_pass_num < 20) {
+            GameX.SnakeAISpeed = 6
+
+            if (GameX.no_used_revive_pass && GameX.total_pass_num > 10) {
+                if (GameX.no_revive_pass_num / GameX.total_pass_num < 0.5) {
+                    GameX.ShrinkRate = 15
+                } else if(GameX.no_revive_pass_num / GameX.total_pass_num < 0.8) {
                     GameX.ShrinkRate = 10
                 } else {
-                    GameX.FrameStep = 5
                     GameX.ShrinkRate = 6
+                    GameX.FrameStep = 5
+                    GameX.SnakeAISpeed = 5
                 }
             } else {
                 GameX.ShrinkRate = 15

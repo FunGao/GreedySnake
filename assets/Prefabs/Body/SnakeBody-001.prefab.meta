@@ -8,6 +8,7 @@
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "SnakeBody-001"
+    "syncNodeName": "SnakeBody-001",
+    "persistent": false
   }
 }

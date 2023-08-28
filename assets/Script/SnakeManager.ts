@@ -156,7 +156,7 @@ export class SnakeManager extends Component {
                     (this.Snake.position.y < GameX.BackGroundHeight / -2 /* && Math.abs(Vec3.angle(GameX.SnakeDirection, new Vec3(0, -1, 0))) < Math.PI / 2 */)
                 )) {
                     if (GameX.SnakeDirection) {
-                        this.direction = this.direction.clone().lerp(GameX.SnakeDirection, 1.2 * GameX.FrameStep / GameX.SnakeSpeed).normalize()
+                        this.direction = this.direction.clone().lerp(GameX.SnakeDirection, GameX.FrameStep / GameX.SnakeSpeed).normalize()
                         this.speed = this.sectionSpace / GameX.SnakeSpeed
                         this.rotateHead(this.direction)
                         this.moveSnake()
@@ -211,7 +211,7 @@ export class SnakeManager extends Component {
     initValue() {
         GameX.SnakeSpeed = GameX.SnakeSpeed || 5
         this.snakeArray = [this.Snake]
-        this.sectionSpace = this.Snake.getComponent(UITransform).contentSize.width / 2
+        this.sectionSpace = this.Snake.getComponent(UITransform).contentSize.width / 1.6
         this.speed = this.sectionSpace / GameX.SnakeSpeed
         this.moveArray = []
         this.invincible = true
