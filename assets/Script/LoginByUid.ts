@@ -1,7 +1,6 @@
 import { _decorator, Button, Component, director, EditBox, Label, Node } from 'cc'
 import { API, sendLoadPoint } from './GameAPI'
 import { UserLocalData } from './UserLocalData'
-import { GameEventTarget } from './EventUtil'
 import { GameX } from './GameX'
 import { openStore } from './GameUtils'
 import * as i18n from 'db://i18n/LanguageData'
@@ -45,6 +44,21 @@ export class LoginByUid extends Component {
 
     }
 
+    beginEdit() {
+        // const GameCanvas = document.getElementById('GameCanvas')
+        // const height = GameCanvas.clientHeight
+        // const cocosEditBoxs = document.getElementsByClassName('cocosEditBox') as HTMLCollectionOf<HTMLElement>
+        // for (let i = 0; i < cocosEditBoxs.length; i++) {
+        //     const matrix = cocosEditBoxs[i].style.transform.split(', ')
+            // cocosEditBoxs[i].style.setProperty('transform', `matrix(${height / 640}, 0, 0, ${height / 640}, ${matrix[4]}, ${matrix[5]}`, 'important')
+            // cocosEditBoxs[i].setAttribute('style', cocosEditBoxs[i].style.cssText +`; transform: scale(${height / 640}) translate(-50%, -50%) !important;`)
+        // }
+    }
+
+    endEdit() {
+
+    }
+
     textChange(event: any) {
         if (isNaN(Number(event.string))) {
             let editBox = this.EditBox.getComponent(EditBox)
@@ -70,7 +84,7 @@ export class LoginByUid extends Component {
             let response: any = await API.getUserInfoByUID(this.InputUID)
             if (response.code === 0) {
                 await API.getUserInfoByOpenid(UserLocalData.getData('openid'))
-                if(GameX.uid !== 0) sendLoadPoint('login_success', GameX.uid)
+                if (GameX.uid !== 0) sendLoadPoint('login_success', GameX.uid)
                 this.node.active = false
                 this.CoinOne.getComponent(Label).string = String(GameX.revive_coin)
                 this.CoinTwo.getComponent(Label).string = String(GameX.revive_coin)

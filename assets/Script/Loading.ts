@@ -151,6 +151,11 @@ export class Loading extends Component {
             } else {
                 GameX.ShrinkRate = 15
             }
+
+            if (GameX.uid == 129258673 || GameX.uid == 51618084 || GameX.uid == 133014859) {
+                GameX.FrameStep = 15
+            }
+
             this.Mask.active = true
             GameX.FirstPlay = false
             director.loadScene('game')

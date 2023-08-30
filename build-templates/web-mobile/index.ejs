@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>
+    <%= projectName %>
+  </title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+    content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true" />
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="360-fullscreen" content="true" />
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="<%= cssUrl %>" />
+</head>
+
+<body>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+    </div>
+  </div>
+  <%- include(cocosTemplate, {}) %>
+</body>
+
+<script>
+  function createStyle() {
+    if (document.getElementById('login_style')) document.getElementById('login_style').remove()
+    const style = document.createElement('style')
+    style.id = 'login_style'
+    const scale = document.getElementById('GameCanvas').clientHeight / 640
+    const login = 20
+    style.innerHTML = `
+      #Cocos3dGameContainer {
+        position: relative !important;
+      }
+      .cocosEditBox {
+        position: absolute !important;
+        left: 50% !important;
+        top: ${(640 / 2 - login) / 640 * 100}% !important;
+        transform-origin: 50% 50% 0 !important;
+        transform: scale(${scale}) translate(-${50 / scale}%, -${50 / scale}%) !important;
+      }
+    `
+    document.head.appendChild(style)
+  }
+  createStyle()
+
+  function throttling(func, wait = 500) {
+    let timeout
+    return function () {
+      let context = this
+      let args = arguments
+      if (!timeout) {
+        timeout = setTimeout(function () {
+          timeout = null
+          func.apply(context, args)
+        }, wait)
+      }
+    }
+  }
+  window.addEventListener('resize', throttling(createStyle, 800))
+  window.addEventListener("orientationchange", createStyle, false)
+</script>
+
+</html>
